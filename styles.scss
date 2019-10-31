@@ -1,0 +1,107 @@
+$rank-size: 32px;
+$photo-size: 200px;
+$padding: 10px;
+$transition-duration: 1s;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(4, #{$photo-size + 2 * $padding});
+  grid-gap: 20px 10px;
+  grid-auto-rows: 251px;
+  justify-content: center;
+  margin: 20px;
+
+  > .person {
+    padding: $padding;
+    height: max-content;
+    position: relative;
+    cursor: pointer;
+    transition: transform $transition-duration;
+
+    &:hover {
+      background-color: #EEEEEE;
+      border-radius: 10px;
+      z-index: 1;
+      transform: scale(1.2);
+
+      > .details > .extra {
+        display: block;
+      }
+
+      > .photo > img {
+        border-radius: 60px;
+      }
+    }
+
+    > .photo {
+      position: relative;
+
+      > img {
+        width: 100%;
+        border-radius: 50%;
+        transition: border-radius $transition-duration;
+      }
+
+      > .rank {
+        position: absolute;
+        right: 10px;
+        top: calc(50% - #{($rank-size) / 2});
+        width: $rank-size;
+        height: $rank-size;
+        text-align: center;
+        line-height: $rank-size;
+        font-weight: bold;
+        color: #8B0000;
+        font-size: 16px;
+        background-color: white;
+        border-radius: 50%;
+      }
+    }
+
+    > .details {
+      text-align: center;
+
+      > .name {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2F4F4F;
+        text-decoration: none;
+        margin-top: 8px;
+      }
+
+      > .extra {
+        font-size: 18px;
+        margin-top: 9px;
+        margin-bottom: 6px;
+        display: none;
+
+        > .sport {
+          &::after {
+            content: ", ";
+          }
+        }
+
+        > .pay {
+          &::before {
+            content: "$";
+          }
+
+          &::after {
+            content: "M";
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 949px) {
+  .people {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
