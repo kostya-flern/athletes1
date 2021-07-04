@@ -1,0 +1,21 @@
+.person {
+  &:hover {
+    background: #EEEEEE;
+    border-radius: 10px;
+    transform: scale(1.2, 1.4) translate(-8px, 15px);
+    z-index: 1;
+    padding: 10px 10px;
+
+   .extra {
+     display: block;
+     transition: visibility 1s;
+   }
+
+   .photo {
+     img {
+      border-radius: 60px;
+      transition: border-radius 1s;
+     }
+   }
+ }
+}

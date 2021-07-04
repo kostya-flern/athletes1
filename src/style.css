@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+}
+
+.person:hover {
+  background: #EEEEEE;
+  border-radius: 10px;
+  transform: scale(1.2, 1.4) translate(-8px, 15px);
+  z-index: 1;
+  padding: 10px 10px;
+}
+.person:hover .extra {
+  display: block;
+  transition: visibility 1s;
+}
+.person:hover .photo img {
+  border-radius: 60px;
+  transition: border-radius 1s;
+}
+
+.photo {
+  position: relative;
+}
+.photo img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: border-radius 1s;
+}
+
+.rank {
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+  background-color: #FFFFFF;
+  color: #8B0000;
+  bottom: 84px;
+  right: 10px;
+}
+
+.name {
+  font-size: 20px;
+  line-height: 23px;
+  color: #2F4F4F;
+  font-weight: bold;
+}
+
+.details {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.extra {
+  display: none;
+  font-size: 18px;
+  color: #000000;
+  transition: visibility 1s;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 20px 30px;
+  max-width: 890px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 799px) {
+  .people {
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+  }
+}
+.pay::after {
+  content: "M";
+}
+
+.pay::before {
+  content: "$";
+}
+
+/*# sourceMappingURL=style.css.map */
